@@ -241,6 +241,7 @@ namespace Maple_Scroll_Probability_Calculator
         {
             //Binomial probability distibution will work fine for regular scrolls because there are only two outcomes for each scroll: pass or fail.
             //For dark scrolls, we need more complicated code to work out the probabilities.
+            //This returns an array with the probability distribution for the three possible outcomes of a dark scroll
             double BoomChance = (1 - probability) / 2;
             double ZeroChance = (1 - probability) / 2; //I know these are the same probabilities, but I have two variables to make the code a bit more readable
             int maxbonus = bonus * trials;
@@ -251,7 +252,7 @@ namespace Maple_Scroll_Probability_Calculator
                 answer = new Double[maxbonus + 2];
             }
             else
-            {
+            {//trials represents how many of a specific scroll is being used. If that number is 0, we know that the only possible outcome is +0.
                 answer = new double[2];
                 answer[0] = 0;
                 answer[1] = 1;
@@ -285,6 +286,8 @@ namespace Maple_Scroll_Probability_Calculator
 
         private int DecimalToInt32 (decimal input)
         {
+        //takes an input of type decimal and attempts to parse as an int.
+        //if it fails, it returns 0 and gives an error message to the user
             if(Int32.TryParse(input.ToString(), out int output))
             {
                 return output;
@@ -300,6 +303,8 @@ namespace Maple_Scroll_Probability_Calculator
         {
             //I expect there may be some elegant mathematical way to do this, but looking online I couldn't find anything and I couldn't work anything out myself like I could for the multinomial function I made.
             //Frankly, we live in the modern world where brute force and ignorance is the true way to code, so I don't feel bad for it. 
+            //This function takes two arrays respresenting probability distributions and combines them into one array. 
+           
             Double[] finalDistribution = new Double[size + 2];
             for (int index = 0; index < finalDistribution.Length; index++)
             {
@@ -326,12 +331,6 @@ namespace Maple_Scroll_Probability_Calculator
                     }
                 }
             }
-            double test = 0;
-            foreach (double thing in finalDistribution)
-            {
-                test = test + thing;
-            }
-  //          MessageBox.Show(test.ToString());
             return finalDistribution;
         }
 
@@ -383,26 +382,31 @@ namespace Maple_Scroll_Probability_Calculator
             finalDistribution = CombineProbabilities(ArrFor70, finalDistribution, MaxStatGain);
             finalDistribution = CombineProbabilities(ArrFor100, finalDistribution, MaxStatGain);
             
-            //round numbers so they are more presentable. 3 significant figures should suffice.
+            //round numbers so they are more presentable. 3 significant figures should suffice. I may make this optional in future builds if I ever make any.
 
             for (int index = 0; index < finalDistribution.Length; index++)
             {
                 finalDistribution[index] = ThreeSigFigs(finalDistribution[index]);
             }
+            
+            //clear the table if one has already been populated to it
             tblOutputTable.Columns.Clear();
             tblOutputTable.Rows.Clear();
+            
+            //create the two columns we will need for the output
             tblOutputTable.Columns.Add("Outcome","Outcome");
             tblOutputTable.Columns.Add("Value", "Probability");
             
+            //populate the table with data
             for (int index = 0; index < finalDistribution.Length; index++)
             {
-                if (finalDistribution[index] != 0)
+                if (finalDistribution[index] != 0)//There is no point telling people about outcomes with a 0% chance of happening.
                 {
-                    if (index == 0)
+                    if (index == 0) //index 0 is boom town
                     {
                         tblOutputTable.Rows.Add(new object[] { "Boom", (finalDistribution[index] * 100).ToString() + "%" });
                     }
-                    else
+                    else //otherwise, the outcome is +index-1
                     {
                         tblOutputTable.Rows.Add(new object[] { "+" + (index - 1).ToString(), (finalDistribution[index] * 100).ToString() + "%" });
                     }
