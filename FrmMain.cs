@@ -327,11 +327,6 @@ namespace Maple_Scroll_Probability_Calculator
                 }
             }
             double test = 0;
-            foreach (double thing in finalDistribution)
-            {
-                test = test + thing;
-            }
-  //          MessageBox.Show(test.ToString());
             return finalDistribution;
         }
 
