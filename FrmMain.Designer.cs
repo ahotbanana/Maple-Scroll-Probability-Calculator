@@ -50,6 +50,10 @@
             this.cmbSlots = new System.Windows.Forms.ComboBox();
             this.btnCalc = new System.Windows.Forms.Button();
             this.tblOutputTable = new System.Windows.Forms.DataGridView();
+            this.lblCommonConfig = new System.Windows.Forms.Label();
+            this.btn532 = new System.Windows.Forms.Button();
+            this.btn321 = new System.Windows.Forms.Button();
+            this.btn210 = new System.Windows.Forms.Button();
             this.panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stat100)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stat70)).BeginInit();
@@ -258,7 +262,7 @@
             // 
             // btnCalc
             // 
-            this.btnCalc.Location = new System.Drawing.Point(278, 219);
+            this.btnCalc.Location = new System.Drawing.Point(280, 406);
             this.btnCalc.Name = "btnCalc";
             this.btnCalc.Size = new System.Drawing.Size(113, 32);
             this.btnCalc.TabIndex = 12;
@@ -274,11 +278,54 @@
             this.tblOutputTable.Size = new System.Drawing.Size(260, 219);
             this.tblOutputTable.TabIndex = 1;
             // 
+            // lblCommonConfig
+            // 
+            this.lblCommonConfig.AutoSize = true;
+            this.lblCommonConfig.Location = new System.Drawing.Point(275, 219);
+            this.lblCommonConfig.Name = "lblCommonConfig";
+            this.lblCommonConfig.Size = new System.Drawing.Size(118, 13);
+            this.lblCommonConfig.TabIndex = 13;
+            this.lblCommonConfig.Text = "Common Configurations";
+            // 
+            // btn532
+            // 
+            this.btn532.Location = new System.Drawing.Point(278, 235);
+            this.btn532.Name = "btn532";
+            this.btn532.Size = new System.Drawing.Size(113, 32);
+            this.btn532.TabIndex = 14;
+            this.btn532.Text = "5/2/1";
+            this.btn532.UseVisualStyleBackColor = true;
+            this.btn532.Click += new System.EventHandler(this.btn532_Click);
+            // 
+            // btn321
+            // 
+            this.btn321.Location = new System.Drawing.Point(278, 273);
+            this.btn321.Name = "btn321";
+            this.btn321.Size = new System.Drawing.Size(113, 32);
+            this.btn321.TabIndex = 15;
+            this.btn321.Text = "3/2/1";
+            this.btn321.UseVisualStyleBackColor = true;
+            this.btn321.Click += new System.EventHandler(this.btn321_Click);
+            // 
+            // btn210
+            // 
+            this.btn210.Location = new System.Drawing.Point(278, 311);
+            this.btn210.Name = "btn210";
+            this.btn210.Size = new System.Drawing.Size(113, 32);
+            this.btn210.TabIndex = 16;
+            this.btn210.Text = "2/1/0";
+            this.btn210.UseVisualStyleBackColor = true;
+            this.btn210.Click += new System.EventHandler(this.btn210_Click);
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(397, 450);
+            this.Controls.Add(this.btn210);
+            this.Controls.Add(this.btn321);
+            this.Controls.Add(this.btn532);
+            this.Controls.Add(this.lblCommonConfig);
             this.Controls.Add(this.tblOutputTable);
             this.Controls.Add(this.panel);
             this.Controls.Add(this.btnCalc);
@@ -299,6 +346,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.stat10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblOutputTable)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -325,6 +373,10 @@
         private System.Windows.Forms.NumericUpDown stat10;
         private System.Windows.Forms.Label lblStat;
         private System.Windows.Forms.DataGridView tblOutputTable;
+        private System.Windows.Forms.Label lblCommonConfig;
+        private System.Windows.Forms.Button btn532;
+        private System.Windows.Forms.Button btn321;
+        private System.Windows.Forms.Button btn210;
     }
 }
 

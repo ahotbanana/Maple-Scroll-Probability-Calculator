@@ -327,6 +327,11 @@ namespace Maple_Scroll_Probability_Calculator
                 }
             }
             double test = 0;
+            foreach (double thing in finalDistribution)
+            {
+                test = test + thing;
+            }
+  //          MessageBox.Show(test.ToString());
             return finalDistribution;
         }
 
@@ -405,6 +410,34 @@ namespace Maple_Scroll_Probability_Calculator
             }
 
            
+        }
+
+        private void btn532_Click(object sender, EventArgs e)
+        {
+            stat10.Value = 5;
+            stat30.Value = 5;
+            stat60.Value = 2;
+            stat70.Value = 2;
+            stat100.Value = 1;
+
+        }
+
+        private void btn321_Click(object sender, EventArgs e)
+        {
+            stat10.Value = 3;
+            stat30.Value = 3;
+            stat60.Value = 2;
+            stat70.Value = 2;
+            stat100.Value = 1;
+        }
+
+        private void btn210_Click(object sender, EventArgs e)
+        {
+            stat10.Value = 2;
+            stat30.Value = 2;
+            stat60.Value = 1;
+            stat70.Value = 1;
+            stat100.Value = 0;
         }
     }
 }
