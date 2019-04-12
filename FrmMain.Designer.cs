@@ -90,39 +90,69 @@
             // 
             // stat100
             // 
+            this.stat100.Enabled = false;
             this.stat100.Location = new System.Drawing.Point(186, 151);
             this.stat100.Name = "stat100";
             this.stat100.Size = new System.Drawing.Size(183, 20);
             this.stat100.TabIndex = 18;
+            this.stat100.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // stat70
             // 
+            this.stat70.Enabled = false;
             this.stat70.Location = new System.Drawing.Point(186, 124);
             this.stat70.Name = "stat70";
             this.stat70.Size = new System.Drawing.Size(183, 20);
             this.stat70.TabIndex = 17;
+            this.stat70.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // stat60
             // 
+            this.stat60.Enabled = false;
             this.stat60.Location = new System.Drawing.Point(186, 97);
             this.stat60.Name = "stat60";
             this.stat60.Size = new System.Drawing.Size(183, 20);
             this.stat60.TabIndex = 16;
+            this.stat60.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // stat30
             // 
+            this.stat30.Enabled = false;
             this.stat30.Location = new System.Drawing.Point(186, 70);
             this.stat30.Name = "stat30";
             this.stat30.Size = new System.Drawing.Size(183, 20);
             this.stat30.TabIndex = 15;
+            this.stat30.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // stat10
             // 
+            this.stat10.Enabled = false;
             this.stat10.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.stat10.Location = new System.Drawing.Point(186, 43);
             this.stat10.Name = "stat10";
             this.stat10.Size = new System.Drawing.Size(183, 20);
             this.stat10.TabIndex = 14;
+            this.stat10.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // lblStat
             // 
@@ -321,7 +351,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(397, 450);
+            this.ClientSize = new System.Drawing.Size(397, 451);
             this.Controls.Add(this.btn210);
             this.Controls.Add(this.btn321);
             this.Controls.Add(this.btn532);
